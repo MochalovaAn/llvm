@@ -4372,9 +4372,6 @@ Instruction *SPIRVToLLVM::transOCLBuiltinFromExtInst(SPIRVExtInst *BC,
 bool SPIRVToLLVM::transSourceLanguage() {
   SPIRVWord Ver = 0;
   SourceLanguage Lang = BM->getSourceLanguage(&Ver);
-  assert((Lang == SourceLanguageUnknown || // Allow unknown for debug info test
-          Lang == SourceLanguageOpenCL_C || Lang == SourceLanguageOpenCL_CPP) &&
-         "Unsupported source language");
   unsigned short Major = 0;
   unsigned char Minor = 0;
   unsigned char Rev = 0;
